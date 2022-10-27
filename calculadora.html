@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8"> 
+    <title>Calculadora</title>
+    <style type="text/css">
+       
+       
+       body{
+           background-image: linear-gradient(to  right, #1E8BD4, #0A2F47, #072133);
+        }
+        #nome{
+            margin-top: 100px;
+            margin-left: 680px;
+            color: #fff;
+        }
+        #calculadora{
+            background-image: linear-gradient(to left,#249BBF, #186780,  #0A2F34);
+            text-align: center;
+            border: 1px solid rgba(85, 84, 84, 0.712);
+            width: 420px;
+            height: 580px;
+            margin-top: 80px;
+            margin-left: 600px;
+            padding: 40px;
+            padding-bottom: 80px;
+            border-radius: 20px;
+            color: black;
+        }
+        #tela{
+            background-color: white;
+            border: 1px solid rgba(85, 84, 84, 0.712);
+            text-align: right;
+            font-size: 25px;
+            width: 375px;
+            height: 30px;
+            padding: 20px;
+            margin-top: -1px;
+            margin-left: 2px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+       .numeros{
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid rgba(85, 84, 84, 0.712);
+        width: 90px;
+        height: 70px;
+        font-size: 25px;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 5px;
+        border-radius: 50px;
+        color: black
+       }
+       table{
+        margin-top: -15px;
+        margin-left: -15px;
+        padding: 5px;
+       
+       }
+       .numeros:hover{
+        background-color: #437396;
+         }
+        .clear:hover{
+        background-color: #437396;
+       }
+      
+       .clear{
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid rgba(85, 84, 84, 0.712);
+        width: 90px;
+        height: 70px;
+        float: right;
+        font-size: 25px;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 50px;
+        color: black
+        
+       }
+      
+    </style>
+</head>
+<body>
+    <h1 id="nome">Paulo Lucas Costa Araújo</h1>
+    
+    <div id="calculadora">  <!-- inicio -->
+        <h1>Calculadora</h1>
+           <p id="tela"></p>
+                <table>
+                    <tr>
+                        <td colspan="4"><button class="clear" onclick="clean()">C</button></td>
+                    </tr>
+                <tr>
+                        <td><button class="numeros" onclick="insert('7')">7</button></td>
+                        <td><button class="numeros" onclick="insert('8')">8</button></td>
+                        <td><button class="numeros" onclick="insert('9')">9</button></td>
+                        <td><button class="numeros" onclick="back()"><</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="numeros" onclick="insert('4')">4</button></td>
+                    <td><button class="numeros" onclick="insert('5')">5</button></td>
+                    <td><button class="numeros" onclick="insert('6')">6</button></td>
+                    <td><button class="numeros" onclick="insert('/')">/</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="numeros" onclick="insert('1')">1</button></td>
+                    <td><button class="numeros" onclick="insert('2')">2</button></td>
+                    <td><button class="numeros" onclick="insert('3')">3</button></td>
+                    <td><button class="numeros" onclick="insert('*')">X</button></td>
+                    </tr>
+
+                    <tr>
+                        <td><button class="numeros" onclick="insert('.')">.</button></td>
+                        <td><button class="numeros" onclick="insert('0')">0</button></td>
+                        <td><button class="numeros" onclick="insert(',')">,</button></td>
+                        <td><button class="numeros" onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                <!--Aplicado colspan para juntar as linhas uma largura para melhorar o design-->
+                    <td colspan="3" ><button class="numeros" style="width: 300px;" onclick="calcular()">=</button></td>
+                    <td><button class="numeros" onclick="insert('+')">+</button></td>
+            </tr>
+                </table>
+
+    </div> <!--fim-->
+  
+  
+        <script>
+            function insert(num){
+               var numero = document.getElementById('tela').innerHTML;
+               document.getElementById('tela').innerHTML = numero + num;
+            }
+
+            function clean(){
+                document.getElementById('tela').innerHTML = "";
+            }
+
+            function calcular(){
+                var tela = document.getElementById('tela').innerHTML;
+                if (tela)
+                {
+                    document.getElementById('tela').innerHTML = eval(tela)    
+                }
+                else{
+                    document.getElementById('tela').innerHTML = "Nada..."
+                }
+            }
+            function back(){
+                var tela = document.getElementById('tela').innerHTML;
+                document.getElementById('tela').innerHTML = tela.substring(0, tela.length -1);
+            }
+        </script>
+
+</body>
+</html>
