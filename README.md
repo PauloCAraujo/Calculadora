@@ -9,3 +9,4 @@ No arquivo "calculadora.js" temos as funções da calculadora:
 - Limpar a calculadora.
 - Função para o calculo.
 - Resultado do calculo.
+- ![calculadorajs](https://github.com/PauloCAraujo/Calculadora/assets/87201963/96b53c8f-a806-41dd-ba34-5fb7be5b1b20)
